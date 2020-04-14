@@ -10,6 +10,7 @@ const Window = () => (
             <div>message</div>
             <div>message</div>
             <div>message</div>
+            <div>message</div>
         </div>
     </section>
 );

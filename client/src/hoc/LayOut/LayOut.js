@@ -14,7 +14,7 @@ const Layout = (props) => {
         <React.Fragment>
             <ToolBar change={change}/>
             <SideDrawer show={show} change={change}/>
-            <main>
+            <main style={{height: "100vh"}}>
                 {props.children}
             </main>
         </React.Fragment>
