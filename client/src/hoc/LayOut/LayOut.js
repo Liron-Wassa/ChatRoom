@@ -1,8 +1,11 @@
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 import ToolBar from '../../components/Navigation/ToolBar/ToolBar';
-import React, { useState } from 'react';
+import { ChatContxet } from '../../contexts/ChatContext';
+import React, { useState, useContext } from 'react';
 
 const Layout = (props) => {
+
+    const { name } = useContext(ChatContxet);
 
     const [show, setShow] = useState(false);
 
@@ -12,9 +15,9 @@ const Layout = (props) => {
 
     return (
         <React.Fragment>
-            <ToolBar change={change}/>
+            {name ? <ToolBar change={change}/> : null}
             <SideDrawer show={show} change={change}/>
-            <main style={{height: "100vh"}}>
+            <main>
                 {props.children}
             </main>
         </React.Fragment>

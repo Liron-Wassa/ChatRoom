@@ -1,11 +1,13 @@
 .Window {
     width: 100%;
-    height: 90%;
+    height: 100%;
     overflow: auto;
     box-sizing: border-box;
+    background-color: red;
 }
 
 .message {
     background-color: blue;
-    margin-top: 60px;
+    margin-top: 56px;
+    /* height: 85%; */
 }
