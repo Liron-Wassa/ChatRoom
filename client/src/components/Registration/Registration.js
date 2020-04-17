@@ -1,11 +1,11 @@
-import { ChatContxet } from '../../contexts/ChatContext';
+import { ChatContext } from '../../contexts/ChatContext';
 import classes from './Registration.module.css';
 import { Redirect } from 'react-router-dom';
 import React, { useContext } from 'react';
 
 const Registration = () => {
 
-    const { emitName, name } = useContext(ChatContxet);
+    const { emitName, name } = useContext(ChatContext);
 
     let userName = "";
 
@@ -13,11 +13,14 @@ const Registration = () => {
         userName = e.target.value;
     };
 
+    if(name) {
+        return <Redirect to={"/chatroom"} />
+    }
+
     return (
         <React.Fragment>
-            {name ? <Redirect to={"/chatroom"} /> : null}
             <div className={classes.Registration}>
-                <h1>Chat Room</h1>
+                <h1>Welcome To Chat Room</h1>
                 <div>
                     <input type="text" placeholder="Enter a name" onChange={handleChange}/>
                     <br/>

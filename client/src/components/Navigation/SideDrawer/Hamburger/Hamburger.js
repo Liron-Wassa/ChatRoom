@@ -1,14 +1,20 @@
+import { ChatContext } from '../../../../contexts/ChatContext';
 import classes from './Humburger.module.css';
-import React from 'react';
+import React, { useContext } from 'react';
 
-const Humburger = (props) => (
-    <div className={classes.Humburger}>
-        <div onClick={props.clicked}>
-            <span></span>
-            <span></span>
-            <span></span>
+const Humburger = () => {
+
+    const { show, setShow } = useContext(ChatContext);
+
+    return (
+        <div className={classes.Humburger}>
+            <div onClick={() => setShow(!show)}>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-    </div>
-);
+    );
+};
 
 export default Humburger;

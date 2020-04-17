@@ -1,35 +1,59 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 import io from 'socket.io-client';
 
-const socket = io.connect("http://localhost:5000");
+// const socket = io.connect("http://localhost:5000");
+let socket;
 
-export const ChatContxet = createContext();
+export const ChatContext = createContext();
 
-const ChatContxetProvider = (props) => {
+const ChatContextProvider = (props) => {
     
-    const [greeting, setGreeting] = useState('');
+    const ENDPOINT = "http://localhost:5000";
+    const [show, setShow] = useState(false);
     const [name, setName] = useState('');
 
-    socket.on("message", function(message) {
-        setGreeting(message);
-    });
+    // socket.on("setId", function(id) {
+    //     console.log(id);
+    // });
 
+    
+    useEffect(() => {
+        
+        socket = io(ENDPOINT);
+        
+        console.log(socket);
+        
+        socket.on("message", function(message) {
+            console.log(message);            
+        });
+        
+    }, [ENDPOINT]);
+    
     const emitName = (name) => {
         if(name) {
             setName(name);
-            socket.emit("name", name);
+            setShow(!show);
+            socket.emit("setName", name);
         }
     };
 
+
+    const handleExit = () => {
+        socket.emit("disconnected", name);
+        setName('');
+    };
+
     return (
-        <ChatContxet.Provider value={{
-            greeting,
+        <ChatContext.Provider value={{
+            handleExit,
             emitName,
-            name
+            setShow,
+            name,
+            show
         }}>
             {props.children}
-        </ChatContxet.Provider>
+        </ChatContext.Provider>
     );
 }
 
-export default ChatContxetProvider;
+export default ChatContextProvider;

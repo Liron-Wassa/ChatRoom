@@ -1,19 +1,22 @@
+import { ChatContext } from '../../../contexts/ChatContext';
 import BackDrop from '../../UI/BackDrop/BackDrop';
 import classes from './SideDrawer.module.css';
 import { NavLink } from 'react-router-dom';
-import React from 'react';
+import React, { useContext } from 'react';
 
-const SideDrawer = (props) => {
+const SideDrawer = () => {
     
+    const { show } = useContext(ChatContext);
+
     let attachedClasses = [classes.SideDrawer, classes.Close];
 
-    if(props.show){
+    if(show){
         attachedClasses = [classes.SideDrawer];
     }    
     
     return (
         <React.Fragment>
-            <BackDrop show={props.show} clicked={props.change} />
+            <BackDrop />
             <nav className={attachedClasses.join(' ')}>
                 <ul>
                     <li><NavLink to="/chatroom/music" activeClassName={classes.active}><i className="fas fa-users"></i>Music</NavLink></li>

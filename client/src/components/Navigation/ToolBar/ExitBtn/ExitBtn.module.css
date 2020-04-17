@@ -1,0 +1,13 @@
+.ExitBtn {
+    color: white;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.ExitBtn span {
+    padding-right: 5px;
+}

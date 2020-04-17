@@ -12,10 +12,23 @@ const io = socket(server);
 io.on("connection", function(socket) {
 
     console.log("connect");
+    
+    // socket.emit("setId", socket.id);
 
-    socket.emit("message", "Welcome to chatRoom");
+    socket.on("setName", function(name) {
+        console.log(socket.id, name);
+        socket.broadcast.emit("message", `${name} on the Loby`);
+    });
 
-    socket.on("name", function(name) {
-        console.log(name);
+    // socket.on("disconnect", function() {
+    //     if(!name) {
+    //         io.emit("message", `${name} has left the room`);
+    //         console.log(name, "Bye Bye");
+    //     }
+    // });
+
+    socket.on("disconnected", function(name) {        
+        socket.broadcast.emit("message", `${name} has left the room`);
+        console.log(socket.id, name, "Bye Bye");
     });
 });

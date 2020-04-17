@@ -1,20 +1,21 @@
-import { ChatContxet } from '../../contexts/ChatContext';
-import React, { useContext } from 'react';
+import ToolBar from '../Navigation/ToolBar/ToolBar';
+import React from 'react';
 import classes from './Chat.module.css';
 import Window from './Window/Window';
 import Inputs from './Inputs/Inputs';
 
 const Chat = () => {
 
-    const { greeting } = useContext(ChatContxet);
-
     return (
-        <div className={classes.Chat}>
-            <Window />
-            <div className={classes.Container}>
-                <Inputs />
+        <React.Fragment>
+            <ToolBar />
+            <div className={classes.Chat}>
+                <Window />
+                <div className={classes.Container}>
+                    <Inputs />
+                </div>
             </div>
-        </div>
+        </React.Fragment>
     );
 };
 

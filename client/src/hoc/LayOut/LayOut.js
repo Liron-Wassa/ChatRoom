@@ -1,22 +1,11 @@
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
-import ToolBar from '../../components/Navigation/ToolBar/ToolBar';
-import { ChatContxet } from '../../contexts/ChatContext';
-import React, { useState, useContext } from 'react';
+import React from 'react';
 
 const Layout = (props) => {
 
-    const { name } = useContext(ChatContxet);
-
-    const [show, setShow] = useState(false);
-
-    const change = () => {        
-        setShow(!show);
-    }
-
     return (
         <React.Fragment>
-            {name ? <ToolBar change={change}/> : null}
-            <SideDrawer show={show} change={change}/>
+            <SideDrawer />
             <main>
                 {props.children}
             </main>

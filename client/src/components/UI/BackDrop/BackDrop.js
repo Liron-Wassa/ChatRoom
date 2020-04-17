@@ -1,8 +1,14 @@
+import { ChatContext } from '../../../contexts/ChatContext';
 import classes from './BackDrop.module.css';
-import React from 'react';
+import React, { useContext } from 'react';
 
-const BackDrop = (props) => (
-    props.show ? <div className={classes.BackDrop} onClick={props.clicked}></div> : null
-);
+const BackDrop = () => {
+
+    const { show, setShow } = useContext(ChatContext);
+
+    return (
+        show ? <div className={classes.BackDrop} onClick={() => setShow(!show)}></div> : null
+    );
+};
 
 export default BackDrop;
