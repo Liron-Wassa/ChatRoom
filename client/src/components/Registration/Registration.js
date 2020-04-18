@@ -4,17 +4,21 @@ import { Redirect } from 'react-router-dom';
 import React, { useContext } from 'react';
 
 const Registration = () => {
-
-    const { emitName, name } = useContext(ChatContext);
-
-    let userName = "";
+    
+    const { changeRoute, chatRoute, userName, setUserName } = useContext(ChatContext);
 
     const handleChange = (e) => {
-        userName = e.target.value;
+        setUserName(e.target.value);
     };
 
-    if(name) {
-        return <Redirect to={"/chatroom"} />
+    let isDisabled = true;
+
+    if(userName) {
+        isDisabled = false
+    }
+    
+    if(chatRoute) {
+        return <Redirect to={`/chatroom/?username=${userName}`} />
     }
 
     return (
@@ -25,7 +29,7 @@ const Registration = () => {
                     <input type="text" placeholder="Enter a name" onChange={handleChange}/>
                     <br/>
                     <br/>
-                    <button onClick={() => emitName(userName)}>Send</button>
+                    <button onClick={changeRoute} disabled={isDisabled}>Send</button>
                 </div>
             </div>
         </React.Fragment>

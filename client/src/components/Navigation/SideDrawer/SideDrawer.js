@@ -6,7 +6,7 @@ import React, { useContext } from 'react';
 
 const SideDrawer = () => {
     
-    const { show } = useContext(ChatContext);
+    const { show, userName } = useContext(ChatContext);
 
     let attachedClasses = [classes.SideDrawer, classes.Close];
 
@@ -19,12 +19,12 @@ const SideDrawer = () => {
             <BackDrop />
             <nav className={attachedClasses.join(' ')}>
                 <ul>
-                    <li><NavLink to="/chatroom/music" activeClassName={classes.active}><i className="fas fa-users"></i>Music</NavLink></li>
-                    <li><NavLink to="/chatroom/sport" activeClassName={classes.active}><i className="fas fa-users"></i>Sport</NavLink></li>
-                    <li><NavLink to="/chatroom/famous" activeClassName={classes.active}><i className="fas fa-users"></i>Famous</NavLink></li>
-                    <li><NavLink to="/chatroom/food" activeClassName={classes.active}><i className="fas fa-users"></i>Food</NavLink></li>
-                    <li><NavLink to="/chatroom/women" activeClassName={classes.active}><i className="fas fa-users"></i>Women</NavLink></li>
-                    <li><NavLink to="/chatroom/men" activeClassName={classes.active}><i className="fas fa-users"></i>men</NavLink></li>
+                    <li><NavLink to={`/chatroom/?username=${userName}&room=music`} activeClassName={classes.active}><i className="fas fa-users"></i>Music</NavLink></li>
+                    <li><NavLink to={`/chatroom/?username=${userName}&room=sport`} activeClassName={classes.active}><i className="fas fa-users"></i>Sport</NavLink></li>
+                    <li><NavLink to={`/chatroom/?username=${userName}&room=famous`} activeClassName={classes.active}><i className="fas fa-users"></i>Famous</NavLink></li>
+                    <li><NavLink to={`/chatroom/?username=${userName}&room=food`} activeClassName={classes.active}><i className="fas fa-users"></i>Food</NavLink></li>
+                    <li><NavLink to={`/chatroom/?username=${userName}&room=women`} activeClassName={classes.active}><i className="fas fa-users"></i>Women</NavLink></li>
+                    <li><NavLink to={`/chatroom/?username=${userName}&room=men`} activeClassName={classes.active}><i className="fas fa-users"></i>men</NavLink></li>
                 </ul>
             </nav>
         </React.Fragment>

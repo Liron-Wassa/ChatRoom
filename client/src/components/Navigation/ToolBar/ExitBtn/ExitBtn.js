@@ -5,9 +5,9 @@ import React, { useContext } from 'react';
 
 const ExitBtn = () => {
 
-    const { name, handleExit } = useContext(ChatContext);
+    const { chatRoute, handleExit } = useContext(ChatContext);
 
-    if(!name) {
+    if(!chatRoute) {
         return <Redirect to="/" />
     }
 

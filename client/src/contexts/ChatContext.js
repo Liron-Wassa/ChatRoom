@@ -1,7 +1,6 @@
 import React, { useState, createContext, useEffect } from 'react';
 import io from 'socket.io-client';
 
-// const socket = io.connect("http://localhost:5000");
 let socket;
 
 export const ChatContext = createContext();
@@ -10,45 +9,58 @@ const ChatContextProvider = (props) => {
     
     const ENDPOINT = "http://localhost:5000";
     const [show, setShow] = useState(false);
-    const [name, setName] = useState('');
-
-    // socket.on("setId", function(id) {
-    //     console.log(id);
-    // });
-
+    const [userName, setUserName] = useState('');
+    const [room, setRoom] = useState('');
+    const [chatRoute, setChatRoute] = useState(false);
+    const [messages, setMessage] = useState([]);
     
     useEffect(() => {
-        
         socket = io(ENDPOINT);
-        
-        console.log(socket);
-        
         socket.on("message", function(message) {
-            console.log(message);            
-        });
-        
+            setMessage(oldMessage => [ ...oldMessage, message ]);
+        });        
+
     }, [ENDPOINT]);
     
-    const emitName = (name) => {
-        if(name) {
-            setName(name);
-            setShow(!show);
-            socket.emit("setName", name);
+    const changeRoute = () => {
+        setChatRoute(true);
+        setShow(!show);
+    };
+
+    const handleExit = () => {
+        if(room) {
+            socket.emit("disconnected");
+        }
+        setChatRoute(false);
+    };
+
+    const emitRoom = (data) => {
+        let username = data.username;
+        let room = data.room;
+        setRoom(room);
+        socket.emit("room", { username, room });
+    }
+
+    const handleUserMessage = (message) => {
+        if(message) {
+            socket.emit("chatMessage", message);
         }
     };
 
 
-    const handleExit = () => {
-        socket.emit("disconnected", name);
-        setName('');
-    };
-
     return (
         <ChatContext.Provider value={{
+            handleUserMessage,
             handleExit,
-            emitName,
+            changeRoute,
+            setUserName,
+            emitRoom,
             setShow,
-            name,
+            setMessage,
+            chatRoute,
+            userName,
+            messages,
+            room,
             show
         }}>
             {props.children}

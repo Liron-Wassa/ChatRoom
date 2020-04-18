@@ -1,0 +1,21 @@
+.Message {
+    background-color: #A9B7F1;
+    width: 80%;
+    border-radius: 10px;
+    word-break: break-all;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 10px;
+}
+
+.Message span {
+    color: #5C72CE;
+    font-weight: 600;
+}
+
+.Message em {
+    margin-left: 10px;
+    color: #696A70;
+    font-weight: bold;
+    font-size: 0.8rem;
+}

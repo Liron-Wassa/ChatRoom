@@ -37,10 +37,16 @@
     background-color: #FFD300;
     font-weight: bold;
     outline: none;
+    color: #48015F;
 }
 
 .Registration button:hover {
     background-color: #B39500;
+}
+
+.Registration button:disabled {
+    cursor: not-allowed;
+    background-color: #795800;
 }
 
 @media (min-width: 560px) {
