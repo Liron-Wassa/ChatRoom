@@ -1,10 +1,10 @@
-const { userJoin, getCurrentUser } = require("./utils/users");
+const { userJoin, getCurrentUser, userLeave, getUsersRoom } = require("./utils/users");
 const formatMessage = require("./utils/messages");
 const socket = require("socket.io");
 const express = require("express");
 const app = express();
 
-const botName = "chatRoom";
+const botName = "ChatBot";
 
 // Socket setup
 const server = app.listen(5000, function(){
@@ -19,34 +19,46 @@ io.on("connection", function(socket) {
     
     socket.on("room", function({ username, room }) {
 
-        console.log( username, room );
-
         const user = userJoin(socket.id, username, room);
-
+        
         socket.join(user.room);
 
-        socket.emit("message", formatMessage(botName, "Welcome to ChatRoom"));
+        socket.emit("message", formatMessage(botName, "Welcome to PartyChat"));
 
         socket.broadcast.to(user.room).emit("message", formatMessage(botName, `${user.username}: has joined to room`));
-
+        io.to(user.room).emit("roomUsers", getUsersRoom(user.room));
     });
 
     socket.on("chatMessage", function(message) {        
         const user = getCurrentUser(socket.id);
-
         io.to(user.room).emit("message", formatMessage(user.username, message));        
     });
 
-    // socket.on("disconnect", function() {
-    //     if(!name) {
-    //         io.emit("message", `${name} has left the room`);
-    //         console.log(name, "Bye Bye");
-    //     }
-    // });
+    socket.on("typing", function() {
+        const user = getCurrentUser(socket.id);
+        socket.broadcast.to(user.room).emit("typing", `${user.username} is typing...`);
+    });
+
+    socket.on("untyping", function() {
+        const user = getCurrentUser(socket.id);
+        socket.broadcast.to(user.room).emit("untyping");
+    });
 
     socket.on("disconnected", function() {    
-        const user = getCurrentUser(socket.id);
-    
-        socket.to(user.room).emit("message", formatMessage(botName, `${user.username}: has left the room`));
+        const user = userLeave(socket.id);
+        if(user) {
+            socket.leave(user.room);
+            socket.broadcast.to(user.room).emit("message", formatMessage(botName, `${user.username}: has left the room`));
+            io.to(user.room).emit("roomUsers", getUsersRoom(user.room));
+        }
+    });
+
+    socket.on("disconnect", function() {
+        const user = userLeave(socket.id);        
+        if(user) {
+            socket.leave(user.room);
+            socket.broadcast.to(user.room).emit("message", formatMessage(botName, `${user.username}: has left the room`));
+            io.to(user.room).emit("roomUsers", getUsersRoom(user.room));
+        }
     });
 });

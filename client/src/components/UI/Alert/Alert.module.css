@@ -1,0 +1,38 @@
+.Alert {
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 300;
+    box-shadow: 10px 10px 20px black;
+    position: fixed;
+    bottom: 10%;
+    transition: all 0.5s;
+    animation-name: alert;
+    animation-duration: 0.5s;
+}
+
+.Alert h2 {
+    text-align: center;
+    padding: 20px;
+}
+
+@keyframes alert {
+    from {
+        transform: translateY(200%);
+        background-color: transparent;
+    }
+    to {
+        transform: translateY(0);
+        background-color: white;
+    }
+}
+
+.Show {
+    transform: translateY(0);
+    background-color: white;
+}
+
+.Hide {
+    transform: translateY(200%);
+    background-color: transparent;
+}

@@ -4,17 +4,24 @@ import classes from './Inputs.module.css';
 
 const Inputs = () => {
 
-    const { handleUserMessage } = useContext(ChatContext);
+    const { handleUserMessage, handleTyping } = useContext(ChatContext);
     const inputRef = useRef(null);
     let message = "";
 
     const clickHandler = () => {        
         handleUserMessage(message);
         inputRef.current.value = "";
+        inputRef.current.focus();  
         message = "";
     }
 
     const changeInputHandler = (e) => {
+        if(inputRef.current.value) {
+            handleTyping("TYPING");
+        }
+        else {
+            handleTyping("UNTYPING");
+        }
         message = e.target.value;
     };
 

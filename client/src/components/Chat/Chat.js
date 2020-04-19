@@ -8,25 +8,27 @@ import Inputs from './Inputs/Inputs';
 
 const Chat = (props) => {
 
-    const { emitRoom, chatRoute, setMessage, setUserName } = useContext(ChatContext);
+    const { emitRoom, chatRoute, setMessage, setUserName, updateRoom, setRoom } = useContext(ChatContext);
 
     const data = queryString.parse(props.location.search);
     
     useEffect(() => {
         if(data.room && chatRoute) {
+            console.log("componentDidUpdate: [Chat.js]");
+            updateRoom();
             setMessage([]);
             emitRoom(data);
             console.log(data);
         }
-
         // eslint-disable-next-line
     }, [data.room]);
 
     useEffect(() => {      
-        console.log("componentWillUnmount");
         return () => {
+            console.log("componentWillUnmount: [Chat.js]");
             setMessage([]);
             setUserName('');
+            setRoom('');
         }
         // eslint-disable-next-line
     }, []);

@@ -4,10 +4,10 @@ import classes from './Room.module.css';
 
 const Room = () => {
 
-    const { room } = useContext(ChatContext);
+    const { room, usersRoom } = useContext(ChatContext);
 
     return (
-        <h1 className={classes.Room}>{room ? room : "Loby"}</h1>
+        <h1 className={classes.Room}>{room ? <span>{room}: {usersRoom.length}</span> : "Loby"}</h1>
     );
 }
 
