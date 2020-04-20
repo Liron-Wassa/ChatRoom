@@ -13,7 +13,7 @@ Live link: https://whispering-beach-84340.herokuapp.com/
 <br/>
 <img src="https://user-images.githubusercontent.com/56726154/79807477-a3c07c00-8373-11ea-9a52-bfff7e4c6aca.png" width="500"/>
 <br/>
-<img src="https://user-images.githubusercontent.com/56726154/79807477-a3c07c00-8373-11ea-9a52-bfff7e4c6aca.png" width="500"/>
+<img src="https://user-images.githubusercontent.com/56726154/79808008-2f86d800-8375-11ea-8692-b47603b14170.png" width="500"/>
 
 ## How to use?
 - Each user needs to insert his name in order to get the chat page
