@@ -15,7 +15,7 @@ const Message = () => {
             return (
                 <div key={uuidv4()} className={classes.Message}>
                     <span dir="rtl">{message.name}</span>
-                    <em>{message.time}</em>
+                    <span><em dir="rtl">{message.time}</em></span>
                     <div><strong dir="rtl">{message.text}</strong></div>
                 </div>
             );

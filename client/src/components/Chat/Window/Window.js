@@ -6,7 +6,7 @@ import Message from './Message/Message';
 
 const Window = () => {
 
-    const { typing, messages } = useContext(ChatContext);
+    const { typing, messages, room } = useContext(ChatContext);
     const windowRef = useRef(null);
     
     useEffect(() => {
@@ -21,7 +21,7 @@ const Window = () => {
         <section className={classes.Container}>
             <div className={classes.Window} ref={windowRef}>
                 <Message />
-                <Alert>You in the Loby choose a room to chat</Alert>
+                {!room ? <Alert>You in the Loby choose a room to chat</Alert> : null}
                 {typing ? <em>{typing}</em> : null}
             </div>
         </section>
