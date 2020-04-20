@@ -9,7 +9,9 @@ Live link: https://whispering-beach-84340.herokuapp.com/
 - Web Socket
 
 ## Illustration
-<img src="https://user-images.githubusercontent.com/56726154/74046249-e3173780-49d6-11ea-8cfe-a9980e4dd80d.png" width="500"/>
+<img src="https://user-images.githubusercontent.com/56726154/79807387-6825b200-8373-11ea-8eae-0b6ae2c2d5f9.png" width="500"/>
+<br/>
+<img src="https://user-images.githubusercontent.com/56726154/79807387-6825b200-8373-11ea-8eae-0b6ae2c2d5f9.png" width="500"/>
 
 ## How to use?
 - to add todo fill all the fields and click on submit
