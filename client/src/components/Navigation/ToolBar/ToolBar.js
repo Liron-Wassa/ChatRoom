@@ -5,7 +5,7 @@ import Room from '../../Chat/Room/Room';
 import React from 'react';
 
 const ToolBar = (props) => (
-    <header>
+    <header className={classes.Header}>
         <div className={classes.ToolBar}>
             <Humburger clicked={props.change} />
             <Room />

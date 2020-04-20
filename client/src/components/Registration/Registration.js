@@ -13,8 +13,8 @@ const Registration = () => {
 
     let isDisabled = true;
 
-    if(userName) {
-        isDisabled = false
+    if(isNaN(userName)) {
+        isDisabled = false;
     }
     
     if(chatRoute) {
@@ -24,7 +24,7 @@ const Registration = () => {
     return (
         <React.Fragment>
             <div className={classes.Registration}>
-                <h1>Welcome To Chat Room</h1>
+                <h1>Welcome To Party Chat</h1>
                 <div>
                     <input type="text" placeholder="Enter a name" onChange={handleChange}/>
                     <br/>

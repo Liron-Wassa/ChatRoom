@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 95%;
 }
 
 .Inputs input {
@@ -12,7 +13,6 @@
     border-radius: 20px;
     border: none;
     outline: none;
-    /* box-sizing: border-box; */
 }
 
 .Inputs i {
@@ -23,6 +23,6 @@
 .Inputs i::before {
     font-size: 34px;
     cursor: pointer;
-    color: #084CE8;
+    color: #5C72CE;
     padding: 0;
 }

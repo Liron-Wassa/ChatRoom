@@ -6,7 +6,7 @@ const Layout = (props) => {
     return (
         <React.Fragment>
             <SideDrawer />
-            <main>
+            <main style={{height: "100vh"}}>
                 {props.children}
             </main>
         </React.Fragment>

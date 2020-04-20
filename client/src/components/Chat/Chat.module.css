@@ -1,17 +1,19 @@
 .Chat {
     width: 100%;
-    height: 100vh;
-    position: relative;
+    height: 82%;
+    background-image: url("../../assets/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* position: relative; */
+    /* background-color: tomato; */
+    /* overflow: auto; */
 }
 
 .Container {
-    padding-top: 10px;
-    padding-bottom: 2px;
-    position: absolute;
-    bottom: 0;
     width: 100%;
-    height: 50px;
-    background-color: #f0f0f0;
-    /* border-top: 1px solid rgb(126, 124, 124);
-    border-bottom: 1px solid rgb(126, 124, 124); */
+    height: 10%;
+    background-color: #EDEDED;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

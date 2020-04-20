@@ -35,7 +35,7 @@ const ChatContextProvider = (props) => {
         });
 
         socket.on("roomUsers", function(data) {
-            console.log(data); 
+            // console.log(data); 
             setUsersRoom(data);
         });
 
@@ -78,7 +78,6 @@ const ChatContextProvider = (props) => {
 
     const updateRoom = () => {
         socket.emit("disconnected");
-        // socket.emit("roomUsers");
     };
 
     return (

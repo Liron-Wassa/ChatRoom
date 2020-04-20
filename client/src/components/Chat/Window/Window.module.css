@@ -1,17 +1,12 @@
-.Window {
-    width: 100%;
-    height: 90%;
-    overflow: auto;
-    box-sizing: border-box;
-    background-color: red;
+.Container {
+    height: 100%;
 }
 
-.message {
+.Window {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: blue;
-    margin-top: 56px;
-    /* height: 85%; */
+    /* background-color: blue; */
+    height: 100%;
+    overflow: auto;
 }

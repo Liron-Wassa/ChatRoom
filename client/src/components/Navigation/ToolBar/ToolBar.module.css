@@ -1,10 +1,12 @@
 .ToolBar {
-    height: 56px;
+    height: 100%;
     width: 100%;
-    position: fixed;
-    z-index: 40;
     background-color: #48015F;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.Header {
+    height: 8%;
 }

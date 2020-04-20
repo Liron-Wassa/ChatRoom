@@ -18,7 +18,7 @@ const Chat = (props) => {
             updateRoom();
             setMessage([]);
             emitRoom(data);
-            console.log(data);
+            // console.log(data);
         }
         // eslint-disable-next-line
     }, [data.room]);
@@ -38,9 +38,9 @@ const Chat = (props) => {
             <ToolBar />
             <div className={classes.Chat}>
                 <Window />
-                <div className={classes.Container}>
-                    <Inputs />
-                </div>
+            </div>
+            <div className={classes.Container}>
+                <Inputs />
             </div>
         </React.Fragment>
     );
