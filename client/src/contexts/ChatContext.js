@@ -21,7 +21,7 @@ const ChatContextProvider = (props) => {
         console.log("componentDidUpdate: [ChatContext.js]");
         
         socket = io(ENDPOINT);
-        socket.on("message", function(message) {            
+        socket.on("message", function(message) {
             setMessage(oldMessage => [ ...oldMessage, message ]);
             setTyping('');
         });        

@@ -9,20 +9,10 @@ const Inputs = () => {
     let message = "";
 
     const clickHandler = () => {
-        // console.log(message);
-        const tempArr = message.split(" ");
-        const joined = tempArr.join(" ");
-        
-        if(joined) {
-            console.log(tempArr);
-            console.log(joined);
-            console.log(joined.length);
-        }
-
-        // handleUserMessage(message);
-        // inputRef.current.value = "";
-        // inputRef.current.focus();  
-        // message = "";
+        handleUserMessage(message);
+        inputRef.current.value = "";
+        inputRef.current.focus();  
+        message = "";
     }
 
     const changeInputHandler = (e) => {

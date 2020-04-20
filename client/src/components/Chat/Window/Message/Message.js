@@ -14,9 +14,9 @@ const Message = () => {
         messageElement = messages.map(message => {
             return (
                 <div key={uuidv4()} className={classes.Message}>
-                    <span>{message.name}</span>
+                    <span dir="rtl">{message.name}</span>
                     <em>{message.time}</em>
-                    <div><strong>{message.text}</strong></div>
+                    <div><strong dir="rtl">{message.text}</strong></div>
                 </div>
             );
         });
