@@ -1,4 +1,22 @@
-.Humburger {
+/* .Humburger {
+    width: 40px;
+    margin-left: 10px;
+}
+
+.Humburger div{
+    cursor: pointer;
+}
+
+.Humburger span{
+    display: block;
+    height: 5px;
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 5px;
+    background-color: white;
+} */
+
+.Humburger > div{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -9,7 +27,7 @@
     cursor: pointer;
 }
 
-.Humburger > div{
+.Humburger > div > span{
     height: 5px;
     width: 100%;
     margin-top: 5px;
@@ -17,6 +35,6 @@
     background-color: white;
 }
 
-.Humburger > div:first-child{
+.Humburger > div > span:first-child{
     margin: 0;
 }

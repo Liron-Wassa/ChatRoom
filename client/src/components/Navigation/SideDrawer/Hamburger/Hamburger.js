@@ -7,10 +7,12 @@ const Humburger = () => {
     const { show, setShow } = useContext(ChatContext);
 
     return (
-        <div className={classes.Humburger} onClick={() => setShow(!show)}>
-            <div></div>
-            <div></div>
-            <div></div>
+        <div className={classes.Humburger}>
+            <div onClick={() => setShow(!show)}>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     );
 };
