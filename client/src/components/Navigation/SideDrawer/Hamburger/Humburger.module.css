@@ -9,8 +9,7 @@
     cursor: pointer;
 }
 
-.Humburger > span{
-    display: inline-block;
+.Humburger > div{
     height: 5px;
     width: 100%;
     margin-top: 5px;
@@ -18,6 +17,6 @@
     background-color: white;
 }
 
-.Humburger > span:first-child{
+.Humburger > div:first-child{
     margin: 0;
 }
