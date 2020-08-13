@@ -7,7 +7,7 @@ export const ChatContext = createContext();
 
 const ChatContextProvider = (props) => {
     
-    const ENDPOINT = "http://localhost:5000";
+    const ENDPOINT = "/";
     const [show, setShow] = useState(false);
     const [userName, setUserName] = useState('');
     const [room, setRoom] = useState('');
