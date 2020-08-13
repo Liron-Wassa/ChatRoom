@@ -1,7 +1,7 @@
 # Introduction
 ChatRoom
 <br/>
-Live link: https://whispering-beach-84340.herokuapp.com/
+Live link: https://wassa-style-chat.herokuapp.com/
 
 ## Technologies
 - React Hooks
