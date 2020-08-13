@@ -1,17 +1,22 @@
 .Humburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     width: 40px;
     margin-left: 10px;
-}
-
-.Humburger div{
     cursor: pointer;
 }
 
-.Humburger span{
-    display: block;
+.Humburger > span{
+    display: inline-block;
     height: 5px;
     width: 100%;
     margin-top: 5px;
     border-radius: 5px;
     background-color: white;
+}
+
+.Humburger > span:first-child{
+    margin: 0;
 }
