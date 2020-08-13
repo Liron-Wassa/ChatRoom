@@ -8,11 +8,7 @@ const Humburger = () => {
 
     return (
         <div className={classes.Humburger}>
-            <div onClick={() => setShow(!show)}>
-                <div>f</div>
-                <div>f</div>
-                <div>f</div>
-            </div>
+            <i className="fas fa-bars" onClick={() => setShow(!show)}></i>
         </div>
     );
 };
