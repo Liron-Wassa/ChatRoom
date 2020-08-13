@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === "production") {
 };
 
 // Socket setup
-const server = app.listen(5000, function(){
+const server = app.listen(process.env.PORT || 5000, function(){
     console.log("server has running"); 
 });
 
