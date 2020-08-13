@@ -1,17 +1,8 @@
 .Header {
     height: 8%;
-    /* height: 100%; */
     width: 100%;
     background-color: #48015F;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-/* .Header > .ToolBar {
-    height: 100%;
-    width: 100%;
-    background-color: #48015F;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} */

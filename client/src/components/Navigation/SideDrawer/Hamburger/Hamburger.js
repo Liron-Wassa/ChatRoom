@@ -9,9 +9,9 @@ const Humburger = () => {
     return (
         <div className={classes.Humburger}>
             <div onClick={() => setShow(!show)}>
-                <span></span>
-                <span></span>
-                <span></span>
+                <div>f</div>
+                <div>f</div>
+                <div>f</div>
             </div>
         </div>
     );

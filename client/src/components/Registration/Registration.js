@@ -25,7 +25,7 @@ const Registration = () => {
         <React.Fragment>
             <div className={classes.Registration}>
                 <h1>Welcome To Party Chat</h1>
-                <div>
+                <div className={classes.Box}>
                     <input type="text" placeholder="Enter a name" onChange={handleChange}/>
                     <br/>
                     <br/>
