@@ -7,7 +7,7 @@ const Room = () => {
     const { room, usersRoom } = useContext(ChatContext);
 
     return (
-        <h1 className={classes.Room}>{room ? <span>{room}: {usersRoom.length}</span> : "Loby"}</h1>
+        <h1 className={classes.Room}>{room ? `${room}: ${usersRoom.length}` : "Loby"}</h1>
     );
 }
 

@@ -2,8 +2,9 @@
     color: white;
     font-size: 25px;
     display: flex;
+    justify-content: center;
     align-items: center;
-    height: 20px;
+    height: 100%;
     margin-right: 10px;
     cursor: pointer;
 }
