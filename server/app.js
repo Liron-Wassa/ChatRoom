@@ -2,9 +2,22 @@ const { userJoin, getCurrentUser, userLeave, getUsersRoom } = require("./utils/u
 const formatMessage = require("./utils/messages");
 const socket = require("socket.io");
 const express = require("express");
+const path = require('path');
 const app = express();
 
 const botName = "ChatBot";
+
+if (process.env.NODE_ENV === "production") {
+
+    const root = path.join(__dirname, "..", 'client', 'build');
+
+    app.use(express.static(root));
+
+    app.get("*", (req, res) => {
+
+      res.sendFile('index.html', { root });
+    });
+};
 
 // Socket setup
 const server = app.listen(5000, function(){
