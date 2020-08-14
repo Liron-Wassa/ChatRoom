@@ -1,3 +1,18 @@
+.Humburger i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Humburger i::before {
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 2rem;
+    display: block;
+    color: white;
+}
+
+/*
 .Humburger {
     display: flex;
     justify-content: center;
@@ -21,19 +36,4 @@
 .Humburger > span:first-child {
     margin: 0;
 }
-
-
-
-/* .Humburger i {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.Humburger i::before {
-    margin-left: 10px;
-    cursor: pointer;
-    font-size: 2rem;
-    display: block;
-    color: white;
-} */
+*/
