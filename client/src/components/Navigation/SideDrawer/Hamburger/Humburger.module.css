@@ -1,4 +1,30 @@
-.Humburger i {
+.Humburger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    width: 35px;
+    height: 100%;
+    margin-left: 10px;
+}
+
+.Humburger > span {
+    display: inline-block;
+    height: 5px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #fff;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.Humburger > span:first-child {
+    margin: 0;
+}
+
+
+
+/* .Humburger i {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,4 +36,4 @@
     font-size: 2rem;
     display: block;
     color: white;
-}
+} */
