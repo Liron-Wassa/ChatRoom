@@ -1,23 +1,13 @@
-.Humburger {
+/* .Humburger i {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-flow: column;
-    width: 35px;
-    height: 100%;
+}
+
+.Humburger i::before {
     margin-left: 10px;
-}
-
-.Humburger > span {
-    display: inline-block;
-    height: 5px;
-    width: 100%;
-    border-radius: 5px;
-    background-color: #fff;
-    margin-top: 3px;
     cursor: pointer;
-}
-
-.Humburger > span:first-child {
-    margin: 0;
-}
+    font-size: 2rem;
+    display: block;
+    color: white;
+} */

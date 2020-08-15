@@ -6,3 +6,28 @@
     justify-content: space-between;
     align-items: center;
 }
+
+
+.Header > div:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    width: 35px;
+    height: 100%;
+    margin-left: 10px;
+}
+
+.Header > div:first-child > span {
+    display: inline-block;
+    height: 5px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #fff;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.Header > div:first-child > span:first-child {
+    margin: 0;
+}

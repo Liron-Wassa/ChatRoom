@@ -11,6 +11,7 @@ const Humburger = () => {
             <span></span>
             <span></span>
             <span></span>
+            {/* <i className="fas fa-bars" onClick={() => setShow(!show)}></i> */}
         </div>
     );
 };

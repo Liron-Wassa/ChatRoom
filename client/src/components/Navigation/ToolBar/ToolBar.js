@@ -6,11 +6,9 @@ import React from 'react';
 
 const ToolBar = (props) => (
     <header className={classes.Header}>
-        {/* <div className={classes.ToolBar}> */}
-            <Humburger clicked={props.change} />
-            <Room />
-            <ExitBtn />
-        {/* </div> */}
+        <Humburger clicked={props.change} />
+        <Room />
+        <ExitBtn />
     </header>
 );
 
