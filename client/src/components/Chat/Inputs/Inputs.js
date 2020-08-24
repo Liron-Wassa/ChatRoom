@@ -9,12 +9,13 @@ const Inputs = () => {
     const inputRef = useRef(null);
     let message = "";
 
-    const clickHandler = (event) => {
+    const submitkHandler = (event) => {
         event.preventDefault();
         handleUserMessage(message);
         inputRef.current.value = "";
         inputRef.current.focus();  
         message = "";
+        setMessageIsValid(false);
     };
 
     const changeInputHandler = (e) => {
@@ -32,7 +33,7 @@ const Inputs = () => {
     };
     
     return (
-        <form className={classes.Inputs} onSubmit={clickHandler}>
+        <form className={classes.Inputs} onSubmit={submitkHandler}>
             {messageIsValid ? <button><i className="fas fa-paper-plane"></i></button> : null}
             <input placeholder="Type a message" onChange={changeInputHandler} ref={inputRef} />
         </form>
