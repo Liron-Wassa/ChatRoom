@@ -2,27 +2,38 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 95%;
+    background-color: #EDEDED;
+    width: 100%;
+    height: 63px;
 }
 
 .Inputs input {
     padding-left: 20px;
     padding-right: 20px;
-    height: 40px;
+    height: 70%;
     width: 80%;
     border-radius: 20px;
     border: none;
     outline: none;
+    box-sizing: border-box;
+}
+
+.Inputs button {
+    display: inline-block;
+    border: none;
+    outline: none;
+    width: 34px;
+    padding: 0;
+    margin-right: 20px;
+    cursor: pointer;
 }
 
 .Inputs i {
-    padding-right: 20px;
-    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
 }
 
 .Inputs i::before {
     font-size: 34px;
-    cursor: pointer;
     color: #5C72CE;
-    padding: 0;
 }

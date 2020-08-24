@@ -1,22 +1,26 @@
 import { ChatContext } from '../../../contexts/ChatContext';
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import classes from './Inputs.module.css';
 
 const Inputs = () => {
 
     const { handleUserMessage, handleTyping, room } = useContext(ChatContext);
+    const [messageIsValid, setMessageIsValid] = useState(false);
     const inputRef = useRef(null);
     let message = "";
 
-    const clickHandler = () => {
+    const clickHandler = (event) => {
+        event.preventDefault();
         handleUserMessage(message);
         inputRef.current.value = "";
         inputRef.current.focus();  
         message = "";
-    }
+    };
 
     const changeInputHandler = (e) => {
-        if(room) {
+        const messageValue = e.target.value.trim();
+        setMessageIsValid(!!messageValue);
+        if(room && messageIsValid) {
             if(inputRef.current.value) {
                 handleTyping("TYPING");
             }
@@ -24,14 +28,14 @@ const Inputs = () => {
                 handleTyping("UNTYPING");
             }
             message = e.target.value;
-        }
+        };
     };
-
+    
     return (
-        <div className={classes.Inputs}>
-            <i className="fas fa-paper-plane" onClick={clickHandler}></i>
+        <form className={classes.Inputs} onSubmit={clickHandler}>
+            {messageIsValid ? <button><i className="fas fa-paper-plane"></i></button> : null}
             <input placeholder="Type a message" onChange={changeInputHandler} ref={inputRef} />
-        </div>
+        </form>
     );
 }
 

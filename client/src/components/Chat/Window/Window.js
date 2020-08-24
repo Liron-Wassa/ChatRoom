@@ -10,11 +10,7 @@ const Window = () => {
     const windowRef = useRef(null);
     
     useEffect(() => {
-
-        console.log("componentDidUpdate: [Window.js]");
-
         windowRef.current.scrollTop = windowRef.current.scrollHeight;
-
     }, [messages]);
 
     return (

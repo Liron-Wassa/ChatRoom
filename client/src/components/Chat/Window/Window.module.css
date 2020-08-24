@@ -1,5 +1,10 @@
 .Container {
-    height: 100%;
+    height: calc(100vh - 50px - 63px);
+    background-image: url("../../../assets/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
 }
 
 .Window {

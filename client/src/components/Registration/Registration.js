@@ -23,15 +23,15 @@ const Registration = () => {
 
     return (
         <React.Fragment>
-            <div className={classes.Registration}>
+            <form className={classes.Registration} onSubmit={changeRoute}>
                 <h1>Welcome To Party Chat</h1>
                 <div className={classes.Box}>
                     <input type="text" placeholder="Enter a name" onChange={handleChange}/>
                     <br/>
                     <br/>
-                    <button onClick={changeRoute} disabled={isDisabled}>Send</button>
+                    <button disabled={isDisabled}>Send</button>
                 </div>
-            </div>
+            </form>
         </React.Fragment>
     );
 }

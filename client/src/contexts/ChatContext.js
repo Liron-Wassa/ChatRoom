@@ -17,12 +17,10 @@ const ChatContextProvider = (props) => {
     const [usersRoom, setUsersRoom] = useState([]);
     
     useEffect(() => {
-
-        console.log("componentDidUpdate: [ChatContext.js]");
         
         socket = io(ENDPOINT);
         socket.on("message", function(message) {
-            setMessage(oldMessage => [ ...oldMessage, message ]);
+            setMessage(oldMessage => [...oldMessage, message]);
             setTyping('');
         });        
 
@@ -35,14 +33,14 @@ const ChatContextProvider = (props) => {
         });
 
         socket.on("roomUsers", function(data) {
-            // console.log(data); 
             setUsersRoom(data);
         });
 
     }, [ENDPOINT]);
     
 
-    const changeRoute = () => {
+    const changeRoute = (event) => {
+        event.preventDefault();
         setChatRoute(true);
         setShow(!show);
     };
@@ -50,7 +48,7 @@ const ChatContextProvider = (props) => {
     const handleExit = () => {
         if(room) {
             socket.emit("disconnected");
-        }
+        };
         setChatRoute(false);
     };
 
@@ -64,7 +62,7 @@ const ChatContextProvider = (props) => {
     const handleUserMessage = (message) => {
         if(message) {
             socket.emit("chatMessage", message);
-        }
+        };
     };
 
     const handleTyping = (type) => {
@@ -73,7 +71,7 @@ const ChatContextProvider = (props) => {
         }
         else if (type === "UNTYPING") {
             socket.emit("untyping");
-        }
+        };
     };
 
     const updateRoom = () => {
